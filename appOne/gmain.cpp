@@ -1,6 +1,29 @@
 #include"libOne.h"
 void gmain() {
     window(1000, 1000);
+    let x = 0, y = 0, deg = -360;
+    angleMode(DEGREES);
+    while (notQuit) {
+        deg += 2;
+        if (deg > 360) {
+            deg = -360;
+            clear(0);
+        }
+        x = cos(deg) * 100;
+        y = sin(deg) * 100;
+        mathAxis(360);
+        stroke(150, 200, 255);
+        strokeWeight(20);
+        mathPoint(deg, y);
+        stroke(255, 200, 150);
+        mathPoint(deg, x);
+    }
+}
+
+/*
+#include"libOne.h"
+void gmain() {
+    window(1000, 1000);
     let x, y, r;
     let deg = 0;
     angleMode(DEGREES);
@@ -53,8 +76,7 @@ void gmain() {
 
     }
 }
-
-
+*/
 
 /*
 void gmain() {
